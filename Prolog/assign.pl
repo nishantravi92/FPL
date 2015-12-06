@@ -6,7 +6,7 @@
  e. Dani and Mary do not want to be together
 
  solve([biking(ali,kari),running(dani,nina),hiking(bing,mary),surfing(charles,lola)]).
-  solve([biking(ali,lola),running(dani,kari),hiking(charles,mary),surfing(bing,nina)]).
+ solve([biking(ali,lola),running(dani,kari),hiking(charles,mary),surfing(bing,nina)]).
 */
 
 
