@@ -5,7 +5,6 @@ int expression1(void);
 int expression2(void);
 int expression3(void);
 int i=0,j=0,k=0;
-int a=0,b=0,c=0;
 int main()
 {
 	printf("%d",sigma(&i,0,4, expression1));
