@@ -4,10 +4,16 @@
  c. Nina does not like to surf.
  d. Lola and Charles want to be together.
  e. Dani and Mary do not want to be together
+
+ solve([biking(ali,kari),running(dani,nina),hiking(charles,mary)]).
+  solve([biking(ali,nina),running(dani,kari),hiking(charles,mary)]).
 */
 
+
 solve(Answer) :- assumptions(Answer),
-				 constrainta(Answer).
+				 constrainta(Answer),
+				 constraintc(Answer).
+
 
 assumptions(Answer) :- boy(B1), boy(B2), B1 \== B2,
 			           boy(B3), B1 \== B3, B2 \== B3,
@@ -20,7 +26,14 @@ assumptions(Answer) :- boy(B1), boy(B2), B1 \== B2,
 
 
 constrainta(Answer) :- member(biking(ali,_), Answer),
- 					member(hiking(_,mary), Answer).
+ 					   member(hiking(_,mary), Answer).
+
+constraintb(Answer) :- \+member(running(bing,_),Answer),
+					\+member(running(charles,_),Answer),
+					\+member(running(_,lola),Answer),
+					\+member(running(_,kari),Answer).
+
+constraintc(Answer) :-
 
 
 boy(ali). girl(kari).
