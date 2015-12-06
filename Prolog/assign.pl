@@ -5,14 +5,17 @@
  d. Lola and Charles want to be together.
  e. Dani and Mary do not want to be together
 
- solve([biking(ali,kari),running(dani,nina),hiking(charles,mary)]).
-  solve([biking(ali,nina),running(dani,kari),hiking(charles,mary)]).
+ solve([biking(ali,kari),running(dani,nina),hiking(bing,mary),surfing(charles,lola)]).
+  solve([biking(ali,lola),running(dani,kari),hiking(charles,mary),surfing(bing,nina)]).
 */
 
 
 solve(Answer) :- assumptions(Answer),
 				 constrainta(Answer),
-				 constraintc(Answer).
+				 constraintb(Answer),
+				 constraintc(Answer),
+				 constraintd(Answer),
+				 constrainte(Answer).
 
 
 assumptions(Answer) :- boy(B1), boy(B2), B1 \== B2,
@@ -33,7 +36,19 @@ constraintb(Answer) :- \+member(running(bing,_),Answer),
 					\+member(running(_,lola),Answer),
 					\+member(running(_,kari),Answer).
 
-constraintc(Answer) :-
+constraintc(Answer) :- \+member(surfing(_,nina),Answer).
+
+constraintd(Answer) :- member(biking(charles,lola),Answer);
+						member(hiking(charles,lola),Answer);
+						member(running(charles,lola),Answer);
+						member(surfing(charles,lola),Answer).
+
+constrainte(Answer) :- \+member(biking(dani,mary),Answer);
+					   \+member(hiking(dani,mary),Answer);
+					   \+member(running(dani,mary),Answer);
+					   \+member(surfing(dani,mary),Answer).
+
+
 
 
 boy(ali). girl(kari).
