@@ -18,9 +18,6 @@ reducible(l(X,a(T,v(X)))):- \+ occurs_free_in(X,T).
 
 reducible(l(X,T1),T2).
 
-
-
-
 occurs_free_in(X,v(X)).
 occurs_free_in(X,l(Y,T)):- X\==Y,
 				   occurs_free_in(X,T).
