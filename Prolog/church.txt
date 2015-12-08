@@ -1,3 +1,3 @@
- insert = Lq.Ln.Lf.Lx.((n f)((f q) x))
+ insert = Lq.Lx.Lc.Ln.((x c)((c q) n))
 
  length = Lq.Lf.Lx.((q Lz.f) (Lx.x x))
